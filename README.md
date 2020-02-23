@@ -101,7 +101,7 @@ cd PhyDOSE/src/R
 
 
 ```
-Rscript PhyDOSE.r [SCS csv file path] [distinguishing feature directory] [mutation name map]
+Rscript SCS_EXP.r [SCS csv file path] [distinguishing feature directory] [mutation name map]
 ```
 
 The first two arguments [SCS csv file path] and [distinguishing feature directory] are mandatory and the last argument is optional in the case that the mutation names in the SCS csv file do not exactly match the name of the muations used for the trees. A csv file can be supplied where the first column list the mutations names used in the SCS csv file and the second column has the corresponding mutation name used in the tree file. Note that is not neccessary for there to be an entry in the tree mutation column for every SCS mutation name entry. Thus, the second column may contain blanks. 
@@ -109,5 +109,5 @@ The first two arguments [SCS csv file path] and [distinguishing feature director
 To run the example execute the following command:
 
 ```
-Rscript PhyDOSE.r ../../data/example/sing_cell_data/SCS.csv  ../../data/example/distFeats
+Rscript SCS_EXP.r ../../data/example/sing_cell_data/SCS.csv  ../../data/example/distFeats
 ```
