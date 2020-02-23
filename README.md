@@ -22,7 +22,7 @@ By default, PhyDOSE uses a confidence level of 0.95, a false negatve rate of 0 a
 Therefore, only the input file needs to be specified but the other arguments can be optionally supplied by the user if they differ from the default values. 
 
 
-### Optional Step 3: Reconciling the SCS Experiment
+###Step 3[OPTIONAL]: Reconciling the SCS Experiment
 If an SCS experiment has been conducted and a user wishes to reconcile the experiment against PhyDOSE's distinguishing features, the following command line script can be run.
 
 ```
