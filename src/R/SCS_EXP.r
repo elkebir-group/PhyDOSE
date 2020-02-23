@@ -1,129 +1,85 @@
 #!/usr/bin/env Rscript
+
+
+#Rscript PhyDOSE.r [path to SCS csv file][path to distinguishing features directory][path to mutation name mapping file]
 args = commandArgs(trailingOnly=TRUE)
 
-if(length(args) <= 2){
-  stop("At least two argument must be supplied (input file)", call.=FALSE)
+
+
+if(length(args) < 2){
+  stop("At least two argument must be supplied (single-cell data and path to distinguishing features)", call.=FALSE)
   
 }else{
-  treeFile <- args[1]
+  scsFile <- args[1]
+  df_folder <- args[2]
+  
 }
 
-
-home_path <- dirname(treeFile)
-tree_file_name <- basename(treeFile)
-
-#read in optional arguments gamma and false negative rate
-if(length(args) == 1){
-  conf_level <- 0.95
-  fn_rate <- 0
-  df_folder <- file.path(home_path, "distFeats")
-}else if(length(args) == 2){
-  conf_level <- args[2]
-  fn_rate <- 0
-  df_folder <- file.path(home_path, "distFeats")
-}else if(length(args) ==3){
-  conf_level <- args[2]
-  fn_rate <- args[3]
-  df_folder <- file.path(home_path, "distFeats")
-  
+if(length(args) > 2){
+  name_changes <-TRUE
+  nameMapFile <- args[3]
 }else{
-  conf_level <- args[2]
-  fn_rate <- args[3]
-  df_folder <- args[4]
+  name_changes <- FALSE
 }
 
 
 
-#takes in dataframe wth all the trees  scs_file_name, number of cells to draw)
-#returns a boolean vector with whether or not that tree was identified by that sample
+library(dplyr,warn.conflicts=FALSE)
+library(stringr)
+source('process_files.r')
 
-scs_exp <- function(scs.dat,df_folder_path, name_map){
-  
+scs.dat <- read.csv(scsFile, stringsAsFactors = F)
 
+
+#if different names are used for the mutations in the SCS experiments than in the original
+# tree files, then there must me a name map provided in csv format that maps the 
+# scs column names (first column) to the mutation names used in the trees (second column)
+if(name_changes){
+  nameMap <- read.csv(nameMap, stringsAsFactors = F)
+  col.df <- data.frame(scs_names =colnames(scs.dat), stringsAsFactors = F)
+  col.df <- col.df %>% inner_join(nameMap)
+  to_keep <- filter(col.df, tree_names!= "")
+  scs.dat<- select(scs.dat, one_of(to_keep$scs_names))
+  colnames(scs.dat) <- to_keep$tree_names
+}
+
+
+
+
+
+scs_exp <- function(scs.dat,df_folder_path){
+   dist_feat_files <- list.files(df_folder_path)
+  tree_support <- data.frame()
+  for(f in dist_feat_files){
+    dfFamily <- df_family(file.path(df_folder_path, f))
+    list.df <- convert_dfFamily_to_scs(dfFamily, colnames(scs.dat))
+    pres <- unlist(lapply(list.df, is_present, scs.dat))
     
-
-    cells <- ceiling(cells)
-    #num_success <- rep(0, nrow(tree_df))
-    scs.all <- data.frame()
-    tree_support <- data.frame()
-    for(i in 1:trials){
-  
-      scs.samples <- sample_n(scs.dat, cells, replace = bool_replace)
-      
-      for(j in 1:nrow(tree_df)){
-        tree <- tree_df[j,]
-        
-        dfFamily <- df_family(file.path(df_folder_path, tree$tree_file_name))
-        list.df <- convert_dfFamily_to_scs(dfFamily, colnames(scs.samples))
-       pres <- unlist(lapply(list.df, is_present, scs.samples))
-       
-       ############Calculate primary support#######################3
-       supported_df <- data.frame() 
-       for(k in 1:length(pres)){
-          if(pres[k] > 0){
-            supported_df <- bind_rows(list.df[[k]], supported_df)
-          }
-       }
-       supported_df <- supported_df %>% distinct()
-        if(nrow(supported_df) > 0){
-          support.prim <- count_cells(supported_df,scs.samples )
-        }else{
-          support.prim <- 0
-        }
-        
-       ##########Calculate secondary support################
-       support.sec <- numeric(length(dfFamily)) 
-       for(k in 1:length(pres)){
-         df <- list.df[[k]]
-         
-         feats_seen <- numeric(nrow(df))
-         if(pres[k] > 0){
-           for(l in 1:nrow(df)){
-             feats_seen[l] <- nrow(semi_join(scs.samples, df[l,], by= colnames(scs.samples)))
-           }
-           support.sec[k] <- min(feats_seen)
-           
-         }
-         
-         
-       }
-      
-     
-        df <-unlist(lapply(dfFamily, paste, collapse = ":"))
-        df_res <- as.data.frame(df) 
-        df_res$df_id =1:length(df)
-        df_res$success <- pres
-        df_res$support.prime <- support.prim
-        df_res$support.sec <- support.sec
-        df_res$trial <- i
-        df_res$tree_file_name <- unique(tree$tree_file_name)
-        df_res$tree_num <- unique(tree$tree_num)
-        df_res$cells <- cells
-      
-        #print(tail(df_res))
-        tree_support <- bind_rows(df_res, tree_support)
-        
-        
+    
+    ############Calculate support #######################3
+    supported_df <- data.frame() 
+    for(k in 1:length(pres)){
+      if(pres[k] > 0){
+        supported_df <- bind_rows(list.df[[k]], supported_df)
       }
-   
-      
-      
-      scs.all <- bind_rows(scs.samples %>% mutate(trial = i), scs.all)
+    }
+    supported_df <- supported_df %>% distinct()
+    if(nrow(supported_df) > 0){
+      support <- count_cells(supported_df,scs.dat)
+    }else{
+      support <- 0
     }
     
-
-    
-    
-    
-    
-
-  scs.all$stat <- stat
-  scs.all$fn <- fn
-
- write.csv(scs.all,write_file, row.names=F)
- return(tree_support)
+    df_tree <- data.frame(tree = f, support = support, stringsAsFactors = F)
+    tree_support  = bind_rows(df_tree, tree_support)
+  }
   
   
+  tree_support$tree_number <- as.numeric(str_replace(str_extract(tree_support$tree, "_T[0-9]*"), "_T", ""))
+  tree_support <- select(tree_support, tree, tree_number, support) %>% arrange(-support) %>% filter(support > 0)
+  
+  return(tree_support)
+
 }
 
 
@@ -170,3 +126,14 @@ is_present <- function(df, scs.dat){
   return(pres)
   
 }
+
+
+
+tree_support <- scs_exp(scs.dat, df_folder)
+
+cat("Tree","\t", "Support", "\n")
+
+for(i in 1:nrow(tree_support)){
+  cat(tree_support[i,"tree_number"],"\t", tree_support[i,"support"], "\n" )
+}
+
