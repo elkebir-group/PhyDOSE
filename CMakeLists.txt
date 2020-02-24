@@ -1,6 +1,6 @@
 cmake_minimum_required( VERSION 2.8 )
 
-project( SeqStudyDesign )
+project( PhyDOSE )
 
 set( CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR} ${CMAKE_MODULE_PATH} )
 
@@ -48,27 +48,27 @@ if( NOT CPLEX_INC_DIR OR NOT CPLEX_LIB_DIR OR NOT CONCERT_INC_DIR OR NOT CONCERT
   endif()
 endif()
 
-set (design_src
-  src/maindesign.cpp
-  src/utils.cpp
-  src/clonetree.cpp
-  src/basetree.cpp
-  src/inputinstance.cpp
-  src/basematrix.cpp
-  src/frequencymatrix.cpp
-  src/setcover.cpp
-  src/setcoverilp.cpp
+set (generateDFF_src
+  src/cpp/maindesign.cpp
+  src/cpp/utils.cpp
+  src/cpp/clonetree.cpp
+  src/cpp/basetree.cpp
+  src/cpp/inputinstance.cpp
+  src/cpp/basematrix.cpp
+  src/cpp/frequencymatrix.cpp
+  src/cpp/setcover.cpp
+  src/cpp/setcoverilp.cpp
 )
 
-set (design_hdr
-  src/utils.h
-  src/clonetree.h
-  src/basetree.h
-  src/inputinstance.h
-  src/basematrix.h
-  src/frequencymatrix.h
-  src/setcover.h
-  src/setcoverilp.h
+set (generateDFF_hdr
+  src/cpp/utils.h
+  src/cpp/clonetree.h
+  src/cpp/basetree.h
+  src/cpp/inputinstance.h
+  src/cpp/basematrix.h
+  src/cpp/frequencymatrix.h
+  src/cpp/setcover.h
+  src/cpp/setcoverilp.h
 )
 
 
@@ -104,6 +104,6 @@ set( CommonLibs
   dl
 )
 
-add_executable( design ${design_src} ${design_hdr} )
-target_include_directories( design PUBLIC "${LIBLEMON_ROOT}/include" "src" ${Boost_INCLUDE_DIRS} ${CPLEX_INC_DIR} ${CONCERT_INC_DIR})
-target_link_libraries( design  ilocplex cplex concert ${CommonLibs} )
+add_executable( generateDFF ${generateDFF_src} ${generateDFF_hdr} )
+target_include_directories( generateDFF PUBLIC "${LIBLEMON_ROOT}/include" "src" ${Boost_INCLUDE_DIRS} ${CPLEX_INC_DIR} ${CONCERT_INC_DIR})
+target_link_libraries( generateDFF  ilocplex cplex concert ${CommonLibs} )
