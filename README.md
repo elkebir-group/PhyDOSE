@@ -8,6 +8,7 @@ The input to PhyDOSE is a set of candidate trees, a frequency matrix obtained fr
 
   1. [Getting started](#start)
      * [Dependencies](#dep)
+     * [Compilation](#comp)
   2. [Usage instructions](#usage)
      * [I/O formats](#io)
      * [Step 1: Generate the distinguishing feature family](#phi)
@@ -37,6 +38,32 @@ PhyDOSE has the following R dependencies:
 * [tidyr](https://cran.r-project.org/web/packages/tidyr/index.html) (>= 1.0)
 * [stringr](https://cran.r-project.org/web/packages/stringr/index.html) (>= 1.4)
 
+In addition, PhyDOSE has the following C++ dependencies:
+
+* [CMake](http://www.cmake.org/) (>= 2.8)
+* [Boost](http://www.boost.org) (>= 1.38)
+* [LEMON](http://lemon.cs.elte.hu/trac/lemon) graph library (>= 1.3)
+* [CPlex](https://www.ibm.com/analytics/data-science/prescriptive-analytics/cplex-optimizer) (>= 12.7)
+
+<a name="comp"></a>
+### Compilation
+
+To compile PhyDOSE C++, execute the following commands from the root of the repository:
+
+    $ mkdir build
+    $ cd build
+    $ cmake .. -DCPLEX=1
+    $ make 
+
+In case CMake fails to detect LEMON, run the following command with adjusted paths:
+
+    $ cmake -DLIBLEMON_ROOT=~/lemon 
+
+The compilation results in the following files in the `build` directory:
+
+EXECUTABLE | DESCRIPTION
+-----------|-------------
+`generateDFF`   | Generates the distinguishing feature family of a phylogenetic tree.
 
 <a name="usage"></a>
 ## Usage Instructions
@@ -48,7 +75,22 @@ The input to PhyDOSE is a .txt or .tsv file that contains edge lists for all can
 Optionally, after a single-cell sequencing experiment has been performed, PhyDOSE can also be used to determine the support for each tree in the candidate set based on the pre-calculated distinguishing features. The single-cell sequencing file should be a csv file with mutation names as the column names and each row should represent one cell from the experiment. An entry has value 1 if the jth mutation was observed in the ith cell and 0 otherwise. In cases where the mutation names used in the single cell data do not match the mutation names in the tree file, then a csv mapping file can be utilized where the first column is the single cell mutation names and the second column has the mutation names used in the tree file.
 
 <a name="phi"></a>
-### Step 1: Generate the minimal distinguishing feature family for each tree 
+### Step 1: Generate the minimal distinguishing feature family for each tree (`generateDFF`)
+
+```
+  Usage: 
+    ./generateDFF [--help|-h|-help] [-i int] [-p int] input
+  Where:
+    input
+       Input
+    --help|-h|-help
+       Print a short help message
+    -i int
+       Tree index
+    -p int
+       Sample index
+```
+Alternatively, a bash script is provided to automate the process, as shown below.
 
 Open a new terminal and navigate to the PhyDOSE directory.
 
