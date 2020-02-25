@@ -72,6 +72,8 @@ EXECUTABLE | DESCRIPTION
 ### I/O formats
 The input to PhyDOSE is a .txt or .tsv file that contains edge lists for all candidate tree followed by a frequency matrix at the completion of the trees. See data/example/exampleTrees.txt for an example of the input file format. 
 
+If each tree requires a separate frequency matrix and all the candidate trees are in separate files, then after the distinguishing features are created, PhyDOSE can be run in batch mode utilizing PhyDOSE_Batch.r. The file name of the tree must include the tree number and the corresponding distinguishing feature file should contain 'T[tree number]_' as is output by PhyDOSE when creating the distinguishing features. This is neccessary to ensure the distinguishing features can be matched to the correct tree. 
+
 Optionally, after a single-cell sequencing experiment has been performed, PhyDOSE can also be used to determine the support for each tree in the candidate set based on the pre-calculated distinguishing features. The single-cell sequencing file should be a csv file with mutation names as the column names and each row should represent one cell from the experiment. An entry has value 1 if the jth mutation was observed in the ith cell and 0 otherwise. In cases where the mutation names used in the single cell data do not match the mutation names in the tree file, then a csv mapping file can be utilized where the first column is the single cell mutation names and the second column has the mutation names used in the tree file.
 
 <a name="phi"></a>
@@ -133,6 +135,16 @@ Therefore, only the tree input file is a mandatory argument and all other can be
 Rscript PhyDOSE.r ../../data/example/exampleTrees.txt 0.9 0.2 ../../data/example/distFeats
 ```
 
+If each tree has its own frequency matrix, then PhyDOSE should be run in batch mode using the following command:
+
+```
+PhyDOSE_Batch.r [path to tree directory] [path to distinguishing features] [freq  multiplier] [conf level] [false negative rate]
+```
+The first two arguments are mandatory and the last three will default to 1, 0.95 and 0 respectively. The frequency multiplier will allow the user to automatically multiply all frequency matrices by a scalar multiplier in case any adjustments are needed after the individual files have been created.  Below is an example for how to run PhyDOSE on the patient 2 data:
+
+```
+PhyDOSE_Batch.r  ../../data/patient2/trees ../../data/patient2/distFeats 2 0.75 0.2
+```
 <a name="scs_exp"></a>
 ### Step 3 [OPTIONAL]: Reconciling the SCS Experiment
 If an SCS experiment has been conducted and a user wishes to reconcile the experiment against PhyDOSE's distinguishing features, the SCS_EXP.r script can be run in order to identify which trees had a non-zero support for the given single-cell data. 
