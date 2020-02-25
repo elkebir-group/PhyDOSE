@@ -163,7 +163,7 @@ calc_prob <- function(prob_vec, cells){
   }
   
   #threshold and renormalize
-  prob_vec <- ifelse(prob_vec < 1e-4, 0, prob_vec)
+  prob_vec <- ifelse(prob_vec < 1e-11, 0, prob_vec)
   prob_vec <- prob_vec/sum(prob_vec)
   
   

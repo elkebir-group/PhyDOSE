@@ -378,7 +378,7 @@ rename_df <- function(df_fam, u){
 #
 #
 ##################################################
-main <- function(fname ){
+main <- function(fname, fmultiplier=1 ){
 
   fil <- readLines(fname)
   fmat <- get_F_matrix(fil)
@@ -401,7 +401,8 @@ main <- function(fname ){
     t <- t[, col.order]
     trees[[i]] <- t
   }
-   u_list <- lapply(trees, calc_u, f= fmatrix)
+  fmatrix <- fmatrix * fmultiplier
+  u_list <- lapply(trees, calc_u, f= fmatrix)
   res<- list(name = fname,  f= fmatrix, u = u_list, trees = trees)
   
   return(res)
