@@ -13,7 +13,7 @@ for f in *.tsv *.txt; do
     #loop through for each tree and find the the distinguishing features
     until [  $NUMBER -lt 0 ]; do
              echo COUNTER $NUMBER
-             design $f -i $NUMBER
+             generateDFF $f -i $NUMBER
              let NUMBER-=1
     done
 done
