@@ -1,10 +1,10 @@
 #!/bin/bash
 
 mkdir distFeats
-for f in ./*t; do
+for f in *.tsv *.txt; do
     #open the file and get the number of trees
     echo $f
-    line=$(sed -n '2{p;q}' $f)
+    line=$(sed -n 2p "$f")
     echo $line
     NUMBER=$(echo $line | grep -o -E '[0-9]+')
   
