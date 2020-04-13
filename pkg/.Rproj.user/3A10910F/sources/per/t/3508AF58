@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1586122004783.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "173169109",
+    "id" : "3508AF58",
+    "lastKnownWriteTime" : 1586742518,
+    "last_content_update" : 1586742518888,
+    "path" : "~/masters_research/pkg/src/EnumerateDF.cpp",
+    "project_path" : "src/EnumerateDF.cpp",
+    "properties" : {
+        "cursorPosition" : "156,9",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "cpp"
+}

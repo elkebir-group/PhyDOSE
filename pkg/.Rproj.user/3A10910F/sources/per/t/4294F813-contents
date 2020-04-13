@@ -1,0 +1,3 @@
+useDynLib(PhyDOSE, .registration=TRUE)
+export("PhyDOSE")
+importFrom(Rcpp, evalCpp)

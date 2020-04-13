@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1586121053029.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1650311260",
+    "id" : "733E633F",
+    "lastKnownWriteTime" : 1586139309,
+    "last_content_update" : 1586139309956,
+    "path" : "~/masters_research/pkg/R/ProcessFiles.R",
+    "project_path" : "R/ProcessFiles.R",
+    "properties" : {
+        "cursorPosition" : "356,65",
+        "scrollLine" : "0",
+        "tempName" : "Untitled2"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

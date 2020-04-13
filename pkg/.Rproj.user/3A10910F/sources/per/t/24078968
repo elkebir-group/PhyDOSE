@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1586121093667.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2738854910",
+    "id" : "24078968",
+    "lastKnownWriteTime" : 1586742720,
+    "last_content_update" : 1586742720120,
+    "path" : "~/masters_research/pkg/R/PhyDOSE.R",
+    "project_path" : "R/PhyDOSE.R",
+    "properties" : {
+        "cursorPosition" : "29,5",
+        "scrollLine" : "0",
+        "tempName" : "Untitled2"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
