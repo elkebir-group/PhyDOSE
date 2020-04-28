@@ -10,7 +10,7 @@
 
 calc_cells <- function(df_fam, sample, tree_num, u_list, fn_rate, gamma){
     
-    u_mat <- u_list[[tree_num]]
+    u_mat <- u_list[[sample]]
     df_fam <- rename_df(df_fam, u_mat)
     u <- u_mat[sample,]
     sample_k <- num_cells(df_fam, u, fn_rate, gamma)

@@ -5,7 +5,7 @@
 1. First, install and load the devtools package
 ```
 install.packages("devtools")
-libarary(devtools)
+library(devtools)
 ```
 2. Run the following
 ```
