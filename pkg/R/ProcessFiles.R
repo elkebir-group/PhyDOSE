@@ -249,48 +249,56 @@ rename_df <- function(df_fam, u){
     return(df_rename)
 }
 
-create_graph <- function(vec){
-    # input "0 3" "1 2" "2 4" "3 1"
-    # output nodes (vector)
-    # nodes <- c("0", "1", "2", "3", "4")
-    
-    # edges
-    # edgeList <- list(0=list(edges=c("3")),
-    #                 1=list(edges=c("2")),
-    #                 2=list(edges=c("4")),
-    #                 3=list(edges=c("1")))
-    
-    # graph <- new("graphNEL", nodes=nodes, edgeL=edgeList, edgemode="undirected")
-    
-    nodes <- c()
-    edgeList <- list()
+##########################################################
+#
+#     requires rgraphviz/graph package
+#     
+#
+#
+###########################################################
 
-    for(i in 1:length(vec)){
-        edgestr <- strsplit(vec[[i]], ' ')
-        if (!(edgestr[[1]][1] %in% nodes)){
-            nodes <- c(nodes, edgestr[[1]][1])
-            #list.append(edgeList, (edgestr[[1]]=list()))
-            #edgeList <- list(edgeList, edgestr[1]=list())
-            edgeList[[edgestr[[1]][1]]] <- list(edges=c())
-        }
-        if (!(edgestr[[1]][2] %in% nodes)){
-            nodes <- c(nodes, edgestr[[1]][2])
-            #list.append(edgeList, (edgestr[[2]]=list()))
-            #edgeList <- list(edgeList, (edgestr[2]=list()))
-            edgeList[[edgestr[[1]][2]]] <- list(edges=c())
-        }
-    }
-    for(i in 1:length(vec)){
-        edgestr <- strsplit(vec[[i]], ' ')
-        mychar <- edgestr[[1]][1]
-        newchar <- edgestr[[1]][2]
-        curr_edges <- edgeList[[mychar]][["edges"]]
-        edgeList[[mychar]][["edges"]] <- c(curr_edges, newchar)
-        #list.append(edgeList[[edgestr[1]]], edgestr[2])
-    }
-    graph <- new("graphNEL", nodes=nodes, edgeL=edgeList, edgemode="directed")
-    return(graph)
-}
+# create_graph <- function(vec){
+#     # input "0 3" "1 2" "2 4" "3 1"
+#     # output nodes (vector)
+#     # nodes <- c("0", "1", "2", "3", "4")
+#     
+#     # edges
+#     # edgeList <- list(0=list(edges=c("3")),
+#     #                 1=list(edges=c("2")),
+#     #                 2=list(edges=c("4")),
+#     #                 3=list(edges=c("1")))
+#     
+#     # graph <- new("graphNEL", nodes=nodes, edgeL=edgeList, edgemode="undirected")
+#     
+#     nodes <- c()
+#     edgeList <- list()
+# 
+#     for(i in 1:length(vec)){
+#         edgestr <- strsplit(vec[[i]], ' ')
+#         if (!(edgestr[[1]][1] %in% nodes)){
+#             nodes <- c(nodes, edgestr[[1]][1])
+#             #list.append(edgeList, (edgestr[[1]]=list()))
+#             #edgeList <- list(edgeList, edgestr[1]=list())
+#             edgeList[[edgestr[[1]][1]]] <- list(edges=c())
+#         }
+#         if (!(edgestr[[1]][2] %in% nodes)){
+#             nodes <- c(nodes, edgestr[[1]][2])
+#             #list.append(edgeList, (edgestr[[2]]=list()))
+#             #edgeList <- list(edgeList, (edgestr[2]=list()))
+#             edgeList[[edgestr[[1]][2]]] <- list(edges=c())
+#         }
+#     }
+#     for(i in 1:length(vec)){
+#         edgestr <- strsplit(vec[[i]], ' ')
+#         mychar <- edgestr[[1]][1]
+#         newchar <- edgestr[[1]][2]
+#         curr_edges <- edgeList[[mychar]][["edges"]]
+#         edgeList[[mychar]][["edges"]] <- c(curr_edges, newchar)
+#         #list.append(edgeList[[edgestr[1]]], edgestr[2])
+#     }
+#     graph <- new("graphNEL", nodes=nodes, edgeL=edgeList, edgemode="directed")
+#     return(graph)
+# }
 
 ##########################################################
 #

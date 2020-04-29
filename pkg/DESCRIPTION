@@ -1,7 +1,7 @@
 Package: PhyDOSE
 Type: Package
 Title: PhyDOSE - Phylogenetic Design Of Single-cell sequencing Experiments
-Version: 1.0
+Version: 0.0.1
 Date: 2020-04-12
 Authors: Nuraini Aguse & Leah Weber
 Maintainer: Nuraini Aguse <aguse2@illinois.edu>

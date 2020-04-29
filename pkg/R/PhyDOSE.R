@@ -17,7 +17,6 @@ PhyDOSE <- function(filename, conf_level=0.95, fn_rate=0, fmult=1){
     library(stringr)
     library(dplyr,warn.conflicts=FALSE)
     library(tidyr)
-    library(Rgraphviz)
     enum_err = FALSE
     dff <- tryCatch({
         enumerateDF(filename)
