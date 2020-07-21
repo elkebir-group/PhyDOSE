@@ -1,0 +1,14 @@
+# 4 out of 4 mutations
+1 #trees
+3 #edges, tree 1
+SF3B1_p.K666N DNMT3A_p.R882H
+FLT3_p.D835V JAK2_p.V617F
+DNMT3A_p.R882H FLT3_p.D835V
+1 #anatomical sites
+1 #samples
+4 #characters
+#sample_index	sample_label	anatomical_site_index	anatomical_site_label	character_index	character_label	f-	f+
+0	1	0	A	0	DNMT3A_p.R882H	0.423885	0.423885
+0	1	0	A	1	FLT3_p.D835V	0.406964	0.406964
+0	1	0	A	2	JAK2_p.V617F	0.075206	0.075206
+0	1	0	A	3	SF3B1_p.K666N	0.440258	0.440258

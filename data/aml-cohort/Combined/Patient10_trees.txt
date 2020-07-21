@@ -1,0 +1,12 @@
+# 3 out of 3 mutations
+1 #trees
+2 #edges, tree 1
+WT1_p.R430P SRSF2_p.P95L
+SRSF2_p.P95L GATA2_p.T303A
+1 #anatomical sites
+1 #samples
+3 #characters
+#sample_index	sample_label	anatomical_site_index	anatomical_site_label	character_index	character_label	f-	f+
+0	1	0	A	0	GATA2_p.T303A	0.319797	0.319797
+0	1	0	A	1	SRSF2_p.P95L	0.356021	0.356021
+0	1	0	A	2	WT1_p.R430P	0.358228	0.358228

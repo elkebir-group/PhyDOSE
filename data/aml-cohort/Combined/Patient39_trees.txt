@@ -1,0 +1,34 @@
+# 4 out of 4 mutations
+6 #trees
+3 #edges, tree 1
+GATA2_p.N297S SF3B1_p.K700E
+GATA2_p.N297S PTPN11_p.G503A
+GATA2_p.N297S PTPN11_p.A72V
+3 #edges, tree 2
+SF3B1_p.K700E PTPN11_p.G503A
+GATA2_p.N297S SF3B1_p.K700E
+GATA2_p.N297S PTPN11_p.A72V
+3 #edges, tree 3
+PTPN11_p.G503A PTPN11_p.A72V
+GATA2_p.N297S SF3B1_p.K700E
+GATA2_p.N297S PTPN11_p.G503A
+3 #edges, tree 4
+SF3B1_p.K700E PTPN11_p.A72V
+GATA2_p.N297S SF3B1_p.K700E
+GATA2_p.N297S PTPN11_p.G503A
+3 #edges, tree 5
+SF3B1_p.K700E PTPN11_p.G503A
+SF3B1_p.K700E PTPN11_p.A72V
+GATA2_p.N297S SF3B1_p.K700E
+3 #edges, tree 6
+SF3B1_p.K700E PTPN11_p.G503A
+PTPN11_p.G503A PTPN11_p.A72V
+GATA2_p.N297S SF3B1_p.K700E
+1 #anatomical sites
+1 #samples
+4 #characters
+#sample_index	sample_label	anatomical_site_index	anatomical_site_label	character_index	character_label	f-	f+
+0	1	0	A	0	GATA2_p.N297S	0.831169	0.831169
+0	1	0	A	1	PTPN11_p.A72V	0.030303	0.030303
+0	1	0	A	2	PTPN11_p.G503A	0.315476	0.315476
+0	1	0	A	3	SF3B1_p.K700E	0.468619	0.468619

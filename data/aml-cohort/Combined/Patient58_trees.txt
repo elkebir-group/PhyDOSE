@@ -1,0 +1,12 @@
+# 3 out of 3 mutations
+1 #trees
+2 #edges, tree 1
+SRSF2_p.P95H IDH2_p.R140Q
+DNMT3A_p.R882H SRSF2_p.P95H
+1 #anatomical sites
+1 #samples
+3 #characters
+#sample_index	sample_label	anatomical_site_index	anatomical_site_label	character_index	character_label	f-	f+
+0	1	0	A	0	DNMT3A_p.R882H	0.465868	0.465868
+0	1	0	A	1	IDH2_p.R140Q	0.276243	0.276243
+0	1	0	A	2	SRSF2_p.P95H	0.448343	0.448343

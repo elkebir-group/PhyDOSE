@@ -1,0 +1,10 @@
+# 2 out of 2 mutations
+1 #trees
+1 #edges, tree 1
+RUNX1_p.Q335X EZH2_p.R670C
+1 #anatomical sites
+1 #samples
+2 #characters
+#sample_index	sample_label	anatomical_site_index	anatomical_site_label	character_index	character_label	f-	f+
+0	1	0	A	0	EZH2_p.R670C	0.459459	0.459459
+0	1	0	A	1	RUNX1_p.Q335X	0.688119	0.688119

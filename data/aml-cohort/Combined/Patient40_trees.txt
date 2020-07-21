@@ -1,0 +1,15 @@
+# 3 out of 3 mutations
+2 #trees
+2 #edges, tree 1
+IDH2_p.R140Q NRAS_p.G12D
+IDH2_p.R140Q FLT3_p.N676K
+2 #edges, tree 2
+NRAS_p.G12D FLT3_p.N676K
+IDH2_p.R140Q NRAS_p.G12D
+1 #anatomical sites
+1 #samples
+3 #characters
+#sample_index	sample_label	anatomical_site_index	anatomical_site_label	character_index	character_label	f-	f+
+0	1	0	A	0	FLT3_p.N676K	0.026989	0.026989
+0	1	0	A	1	IDH2_p.R140Q	0.419558	0.419558
+0	1	0	A	2	NRAS_p.G12D	0.138848	0.138848

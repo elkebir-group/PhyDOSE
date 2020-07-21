@@ -1,0 +1,34 @@
+# 4 out of 4 mutations
+6 #trees
+3 #edges, tree 1
+NRAS_p.G13D FLT3_p.N676K
+NRAS_p.G13D FLT3_p.D835Y
+NRAS_p.G13D FLT3_p.D835A
+3 #edges, tree 2
+NRAS_p.G13D FLT3_p.N676K
+NRAS_p.G13D FLT3_p.D835A
+FLT3_p.D835A FLT3_p.D835Y
+3 #edges, tree 3
+NRAS_p.G13D FLT3_p.D835Y
+NRAS_p.G13D FLT3_p.D835A
+FLT3_p.D835Y FLT3_p.N676K
+3 #edges, tree 4
+NRAS_p.G13D FLT3_p.D835Y
+NRAS_p.G13D FLT3_p.D835A
+FLT3_p.D835A FLT3_p.N676K
+3 #edges, tree 5
+NRAS_p.G13D FLT3_p.D835A
+FLT3_p.D835Y FLT3_p.N676K
+FLT3_p.D835A FLT3_p.D835Y
+3 #edges, tree 6
+NRAS_p.G13D FLT3_p.D835A
+FLT3_p.D835A FLT3_p.N676K
+FLT3_p.D835A FLT3_p.D835Y
+1 #anatomical sites
+1 #samples
+4 #characters
+#sample_index	sample_label	anatomical_site_index	anatomical_site_label	character_index	character_label	f-	f+
+0	1	0	A	0	FLT3_p.D835A	0.138702	0.138702
+0	1	0	A	1	FLT3_p.D835Y	0.006711	0.006711
+0	1	0	A	2	FLT3_p.N676K	0.005297	0.005297
+0	1	0	A	3	NRAS_p.G13D	0.20064	0.20064

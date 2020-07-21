@@ -1,0 +1,15 @@
+# 3 out of 3 mutations
+2 #trees
+2 #edges, tree 1
+SRSF2_p.P95H NRAS_p.G12R
+SRSF2_p.P95H EZH2_p.H680Y
+2 #edges, tree 2
+SRSF2_p.P95H EZH2_p.H680Y
+EZH2_p.H680Y NRAS_p.G12R
+1 #anatomical sites
+1 #samples
+3 #characters
+#sample_index	sample_label	anatomical_site_index	anatomical_site_label	character_index	character_label	f-	f+
+0	1	0	A	0	EZH2_p.H680Y	0.1152	0.1152
+0	1	0	A	1	NRAS_p.G12R	0.081051	0.081051
+0	1	0	A	2	SRSF2_p.P95H	0.226829	0.226829

@@ -1,0 +1,31 @@
+# 5 out of 5 mutations
+4 #trees
+4 #edges, tree 1
+PTPN11_p.A72T NRAS_p.G13R
+NRAS_p.G13R NRAS_p.G12D
+NRAS_p.G13R KRAS_p.G12V
+KRAS_p.G12V KRAS_p.G13D
+4 #edges, tree 2
+PTPN11_p.A72T NRAS_p.G13R
+NRAS_p.G13R KRAS_p.G12V
+KRAS_p.G12V KRAS_p.G13D
+KRAS_p.G13D NRAS_p.G12D
+4 #edges, tree 3
+PTPN11_p.A72T NRAS_p.G13R
+NRAS_p.G13R KRAS_p.G12V
+NRAS_p.G13R KRAS_p.G13D
+KRAS_p.G13D NRAS_p.G12D
+4 #edges, tree 4
+PTPN11_p.A72T NRAS_p.G13R
+NRAS_p.G13R KRAS_p.G12V
+NRAS_p.G13R KRAS_p.G13D
+KRAS_p.G12V NRAS_p.G12D
+1 #anatomical sites
+1 #samples
+5 #characters
+#sample_index	sample_label	anatomical_site_index	anatomical_site_label	character_index	character_label	f-	f+
+0	1	0	A	0	KRAS_p.G13D	0.018203	0.018203
+0	1	0	A	1	KRAS_p.G12V	0.026226	0.026226
+0	1	0	A	2	NRAS_p.G13R	0.05235	0.05235
+0	1	0	A	3	NRAS_p.G12D	0.013845	0.013845
+0	1	0	A	4	PTPN11_p.A72T	0.056229	0.056229

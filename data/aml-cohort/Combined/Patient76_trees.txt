@@ -1,0 +1,22 @@
+# 4 out of 4 mutations
+3 #trees
+3 #edges, tree 1
+U2AF1_p.S34F NRAS_p.Q61H
+DNMT3A_p.R882P U2AF1_p.S34F
+DNMT3A_p.R882P NRAS_p.G12A
+3 #edges, tree 2
+U2AF1_p.S34F NRAS_p.Q61H
+NRAS_p.Q61H NRAS_p.G12A
+DNMT3A_p.R882P U2AF1_p.S34F
+3 #edges, tree 3
+U2AF1_p.S34F NRAS_p.G12A
+U2AF1_p.S34F NRAS_p.Q61H
+DNMT3A_p.R882P U2AF1_p.S34F
+1 #anatomical sites
+1 #samples
+4 #characters
+#sample_index	sample_label	anatomical_site_index	anatomical_site_label	character_index	character_label	f-	f+
+0	1	0	A	0	DNMT3A_p.R882P	0.477361	0.477361
+0	1	0	A	1	NRAS_p.Q61H	0.347403	0.347403
+0	1	0	A	2	NRAS_p.G12A	0.008649	0.008649
+0	1	0	A	3	U2AF1_p.S34F	0.455726	0.455726

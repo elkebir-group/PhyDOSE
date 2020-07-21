@@ -1,0 +1,15 @@
+# 3 out of 3 mutations
+2 #trees
+2 #edges, tree 1
+ASXL1_p.E801X NRAS_p.G12D
+ASXL1_p.E801X KRAS_p.G12R
+2 #edges, tree 2
+KRAS_p.G12R NRAS_p.G12D
+ASXL1_p.E801X KRAS_p.G12R
+1 #anatomical sites
+1 #samples
+3 #characters
+#sample_index	sample_label	anatomical_site_index	anatomical_site_label	character_index	character_label	f-	f+
+0	1	0	A	0	ASXL1_p.E801X	0.495082	0.495082
+0	1	0	A	1	KRAS_p.G12R	0.211892	0.211892
+0	1	0	A	2	NRAS_p.G12D	0.055615	0.055615

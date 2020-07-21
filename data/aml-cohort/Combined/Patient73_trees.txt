@@ -1,0 +1,10 @@
+# 2 out of 2 mutations
+1 #trees
+1 #edges, tree 1
+SF3B1_p.K666N FLT3_p.V491L
+1 #anatomical sites
+1 #samples
+2 #characters
+#sample_index	sample_label	anatomical_site_index	anatomical_site_label	character_index	character_label	f-	f+
+0	1	0	A	0	FLT3_p.V491L	0.204962	0.204962
+0	1	0	A	1	SF3B1_p.K666N	0.505938	0.505938

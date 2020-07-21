@@ -1,0 +1,21 @@
+# 5 out of 5 mutations
+2 #trees
+4 #edges, tree 1
+U2AF1_p.S34F KRAS_p.Q61H
+U2AF1_p.Q84R U2AF1_p.S34F
+NRAS_p.G12S IDH2_p.R140Q
+KRAS_p.Q61H NRAS_p.G12S
+4 #edges, tree 2
+U2AF1_p.S34F KRAS_p.Q61H
+U2AF1_p.S34F IDH2_p.R140Q
+U2AF1_p.Q84R U2AF1_p.S34F
+KRAS_p.Q61H NRAS_p.G12S
+1 #anatomical sites
+1 #samples
+5 #characters
+#sample_index	sample_label	anatomical_site_index	anatomical_site_label	character_index	character_label	f-	f+
+0	1	0	A	0	IDH2_p.R140Q	0.085526	0.085526
+0	1	0	A	1	KRAS_p.Q61H	0.219024	0.219024
+0	1	0	A	2	NRAS_p.G12S	0.172414	0.172414
+0	1	0	A	3	U2AF1_p.Q84R	0.406114	0.406114
+0	1	0	A	4	U2AF1_p.S34F	0.358531	0.358531

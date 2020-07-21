@@ -1,0 +1,12 @@
+# 3 out of 3 mutations
+1 #trees
+2 #edges, tree 1
+PTPN11_p.D61A NRAS_p.G12D
+NRAS_p.G12D KRAS_p.G60D
+1 #anatomical sites
+1 #samples
+3 #characters
+#sample_index	sample_label	anatomical_site_index	anatomical_site_label	character_index	character_label	f-	f+
+0	1	0	A	0	KRAS_p.G60D	0.009544	0.009544
+0	1	0	A	1	NRAS_p.G12D	0.014909	0.014909
+0	1	0	A	2	PTPN11_p.D61A	0.021954	0.021954

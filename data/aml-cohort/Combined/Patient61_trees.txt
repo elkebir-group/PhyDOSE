@@ -1,0 +1,18 @@
+# 4 out of 4 mutations
+2 #trees
+3 #edges, tree 1
+PTPN11_p.P491S IDH2_p.R140Q
+PTPN11_p.N58D PTPN11_p.P491S
+PTPN11_p.N58D NRAS_p.G13D
+3 #edges, tree 2
+PTPN11_p.P491S IDH2_p.R140Q
+PTPN11_p.N58D PTPN11_p.P491S
+IDH2_p.R140Q NRAS_p.G13D
+1 #anatomical sites
+1 #samples
+4 #characters
+#sample_index	sample_label	anatomical_site_index	anatomical_site_label	character_index	character_label	f-	f+
+0	1	0	A	0	IDH2_p.R140Q	0.036866	0.036866
+0	1	0	A	1	NRAS_p.G13D	0.026371	0.026371
+0	1	0	A	2	PTPN11_p.N58D	0.075594	0.075594
+0	1	0	A	3	PTPN11_p.P491S	0.043431	0.043431

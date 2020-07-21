@@ -1,0 +1,12 @@
+# 3 out of 3 mutations
+1 #trees
+2 #edges, tree 1
+U2AF1_p.S34Y DNMT3A_p.R882H
+DNMT3A_p.R882H WT1_p.C453Y
+1 #anatomical sites
+1 #samples
+3 #characters
+#sample_index	sample_label	anatomical_site_index	anatomical_site_label	character_index	character_label	f-	f+
+0	1	0	A	0	DNMT3A_p.R882H	0.403846	0.403846
+0	1	0	A	1	U2AF1_p.S34Y	0.405333	0.405333
+0	1	0	A	2	WT1_p.C453Y	0.081028	0.081028

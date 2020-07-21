@@ -1,0 +1,12 @@
+# 3 out of 3 mutations
+1 #trees
+2 #edges, tree 1
+SRSF2_p.P95L KRAS_p.D33E
+IDH2_p.R140Q SRSF2_p.P95L
+1 #anatomical sites
+1 #samples
+3 #characters
+#sample_index	sample_label	anatomical_site_index	anatomical_site_label	character_index	character_label	f-	f+
+0	1	0	A	0	IDH2_p.R140Q	0.5	0.5
+0	1	0	A	1	KRAS_p.D33E	0.3125	0.3125
+0	1	0	A	2	SRSF2_p.P95L	0.454369	0.454369

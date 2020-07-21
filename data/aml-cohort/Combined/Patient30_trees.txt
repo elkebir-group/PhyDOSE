@@ -1,0 +1,15 @@
+# 3 out of 3 mutations
+2 #trees
+2 #edges, tree 1
+DNMT3A_p.R882H NRAS_p.G13D
+DNMT3A_p.R882H IDH2_p.R140Q
+2 #edges, tree 2
+IDH2_p.R140Q NRAS_p.G13D
+DNMT3A_p.R882H IDH2_p.R140Q
+1 #anatomical sites
+1 #samples
+3 #characters
+#sample_index	sample_label	anatomical_site_index	anatomical_site_label	character_index	character_label	f-	f+
+0	1	0	A	0	DNMT3A_p.R882H	0.227554	0.227554
+0	1	0	A	1	IDH2_p.R140Q	0.021992	0.021992
+0	1	0	A	2	NRAS_p.G13D	0.019459	0.019459

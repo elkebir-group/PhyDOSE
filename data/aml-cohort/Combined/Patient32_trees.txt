@@ -1,0 +1,18 @@
+# 4 out of 4 mutations
+2 #trees
+3 #edges, tree 1
+SF3B1_p.K700E DNMT3A_p.R882H
+RUNX1_p.R166G SF3B1_p.K700E
+RUNX1_p.R166G FLT3_p.D835Y
+3 #edges, tree 2
+SF3B1_p.K700E DNMT3A_p.R882H
+RUNX1_p.R166G SF3B1_p.K700E
+DNMT3A_p.R882H FLT3_p.D835Y
+1 #anatomical sites
+1 #samples
+4 #characters
+#sample_index	sample_label	anatomical_site_index	anatomical_site_label	character_index	character_label	f-	f+
+0	1	0	A	0	DNMT3A_p.R882H	0.376623	0.376623
+0	1	0	A	1	FLT3_p.D835Y	0.246032	0.246032
+0	1	0	A	2	RUNX1_p.R166G	0.732143	0.732143
+0	1	0	A	3	SF3B1_p.K700E	0.397059	0.397059

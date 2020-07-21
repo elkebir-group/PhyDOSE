@@ -1,0 +1,15 @@
+# 3 out of 3 mutations
+2 #trees
+2 #edges, tree 1
+IDH1_p.R132H PTPN11_p.A72T
+IDH1_p.R132H PTPN11_p.F71L
+2 #edges, tree 2
+PTPN11_p.F71L PTPN11_p.A72T
+IDH1_p.R132H PTPN11_p.F71L
+1 #anatomical sites
+1 #samples
+3 #characters
+#sample_index	sample_label	anatomical_site_index	anatomical_site_label	character_index	character_label	f-	f+
+0	1	0	A	0	IDH1_p.R132H	0.468966	0.468966
+0	1	0	A	1	PTPN11_p.F71L	0.226381	0.226381
+0	1	0	A	2	PTPN11_p.A72T	0.166963	0.166963
