@@ -8,4 +8,4 @@ The input to PhyDOSE is a set of candidate trees, a frequency matrix obtained fr
 
 
 
-PhyDOSE is written in C++ and R. PhyDOSE is implemented as an R package named phydoserand installation and usage instructions can be found at [https://github.com/elkebir-group/phydoser](https://github.com/elkebir-group/phydoser.) This repository contains all data associated with our evaluation of PhyDOSE on simulated and real data. 
+PhyDOSE is written in C++ and R. PhyDOSE is implemented as an R package named phydoser and installation and usage instructions can be found at [https://github.com/elkebir-group/phydoser](https://github.com/elkebir-group/phydoser.) This repository contains all data associated with our evaluation of PhyDOSE on simulated and real data. 
